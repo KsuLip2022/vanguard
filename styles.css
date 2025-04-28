@@ -434,9 +434,18 @@ input[type=text], input[type=email]{
  
 
 
-
+/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+@media all and (min-width: 400px) {
+    nav ul{
+    text-align: right;
+    margin-left: 150px;
+    }   
+    }
+    
+    
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
  @media all and (min-width: 600px) {
+
 .navigat ul {
     overflow:visible;
     top: 1.5rem;
@@ -493,14 +502,6 @@ input[type=text], input[type=email]{
 }
 
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-@media all and (min-width: 400px) {
-nav ul{
-text-align: right;
-margin-left: 150px;
-}   
-}
-
 
 /*MEDIA QUERIES (MEDIUM)*/  
 @media all and (min-width: 800px) {
@@ -540,6 +541,9 @@ form{
 
 /* MEDIA QUERIES (LARGE) */
 @media all and (min-width: 900px) {
+
+
+
 .service_card{
     flex: 1 1 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);

@@ -184,6 +184,12 @@ header{
     z-index: 1;   
 }
 
+.navigat:hover ul{
+    max-width: 300px;
+    transition: max-height 0.2s ease-out;
+    background-color: #333333;
+}
+
 .navigat ul {
     /*width: 100%;
     margin:0;
@@ -219,9 +225,6 @@ nav h2{
     text-align: center;
 }
 
-.navigat:hover ul{
-    max-width: 500px;
-}
 .navigat a:hover, nav input:hover {
     background-color: #000000;
 }
@@ -260,9 +263,9 @@ nav h2{
 input[type=checkbox]{
     display: none;
 }
-input[type=checkbox]:checked ~ ul {
+/*input[type=checkbox]:checked ~ ul {
     max-height: 500px;
-}
+}*/
 input[type=checkbox]:checked ~ .navigat label span {
     background: transparent;
 }
@@ -494,6 +497,32 @@ address{
     gap: 20px;
     background-color: transparent;
 } 
+.navigat li{
+    transition: background-color 1s ease-out;
+}
+
+.navigat:hover ul{
+    max-width: 300px;
+    transition: max-height 0.2s ease-out;
+    background-color: #333333;
+}
+
+.navigat li:hover{
+    /*animation-name: changeColor;
+    animation-duration: 1s;
+    animation-delay: 1s;
+}
+@keyframes changeColor{
+  from { background-color: #333333;}
+  to   { background-color: #000000;}
+}*/
+    background-color: #000000;
+    
+}
+
+.navigat:hover{
+    transition: max-height 0.7s ease-out;
+}
 
 .navigat li a {
     display: inline-block;

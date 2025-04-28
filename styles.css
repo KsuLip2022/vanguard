@@ -102,10 +102,23 @@ q:before, q:after {
     color: #EAEAEA;
     font-weight: bold;
     margin-top: 18px;
+    transition: width 1s, height 1s;
 }
 .butt:hover{
     cursor: pointer;
+    cursor: pointer;
+    animation-name: changeColors;
+    animation-duration: 5s;
+    animation-delay: 0.1s;
+    width: 195px;
+    height: 65px;
 }
+
+@keyframes changeColors{
+  from {background-color: #007BFF;}
+  to   {background-color: #FF4500;}
+}
+
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
  header > img{
     content: "";
@@ -113,6 +126,7 @@ q:before, q:after {
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    margin-top: 20px;
 
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -184,22 +198,6 @@ td, th{
     padding: 20px;
 }
 
-
-.divid{   
-    width: 100%;
-    height: 4px;
-    background: #007BFF;
-    box-shadow: 25px 5px 5px rgba(0, 123, 255, 0.95);
-    z-index: 1;   
-}
-nav h2{
-    visibility: hidden;
-    height:1px;
-}
-#menu-toggle{
-    visibility: hidden;
-    height:1px;
-}
 ul a{
     text-decoration: none;  
 }
@@ -213,6 +211,93 @@ header{
     display: flex; 
     z-index: 10;
 }
+.divid{   
+    width: 100%;
+    height: 4px;
+    background: #007BFF;
+    box-shadow: 25px 5px 5px rgba(0, 123, 255, 0.95);
+    z-index: 1;   
+}
+.navigat ul {
+    width: 100%;
+    margin:0;
+    padding:0;
+    list-style: none;
+    overflow: hidden;
+    
+    
+}
+nav h2{
+    visibility: hidden;
+    height:1px;
+}
+.navigat li a {
+    display:block;
+    font-family:sans-serif;
+    font-size:1.5rem;
+    padding:1rem;
+    text-transform:uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007BFF;
+    transition: background-color .3s ease-in;
+}
+.navigat a:hover, nav input:hover {
+    background-color: #000000;
+}
+.navigat label span{
+    visibility: hidden;
+    height:1px;
+    background-color: #EAEAEA;
+    transition: back;
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+.navigat label span:before, .navigat label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.navigat label span:before {
+    top: .75rem;
+}
+.navigat label span:after {
+    top: -.75rem;
+}
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]:checked ~ ul {
+    max-height: 500px;
+}
+input[type=checkbox]:checked ~ .navigat label span {
+    background: transparent;
+}
+input[type=checkbox]:checked ~ .navigat label span:before {
+    transform: rotate(-45deg);
+}
+input[type=checkbox]:checked ~ .navigat label span:after {
+    transform: rotate(45deg);
+}
+input[type=checkbox]:checked ~ .navigat label:not(.steps) span:before, input [type=checkbox]:checked ~ .navigat label:not(.steps) span:after {
+    top: 0;
+}
+
+.navigat{
+    margin-left: auto;
+}
+
+
+
+
+
 
 
 #prov{
@@ -251,7 +336,7 @@ address{
 
 h1{
     color: #007BFF;
-    margin: 10px;
+    margin-top: 40px;
     font-size: xx-large;   
 }
 h2{
@@ -274,13 +359,7 @@ h3{
     margin-bottom: 0;
     width: 96.68%;
 }
-#services {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+#service{
     width: 100%;
     box-sizing: border-box;
     text-align: left;
@@ -288,39 +367,40 @@ h3{
     color: #000000;
     padding: 20px 20px;
     margin-bottom: 0;
-}
-    
-.group11, .group22 {
-    flex: 1 1 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-    width: 100%;
     box-sizing: border-box;
 }
-.group1,.group2{
-    /*background-color: #007BFF;
+#services{   
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EAEAEA;
+    color: #000000;
+    padding: 20px 20px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+   
+.service_card{
+    background-color: #007BFF;
     color: #EAEAEA;
     margin: 12px;
     padding: 15px;
     border-radius: 10px;
-    justify-content: center;*/
-    width: 100%;
-    background-color: #007BFF;
-    color: #EAEAEA;
-    margin: 12px 0; 
-    padding: 15px;
-    border-radius: 10px;
-    box-sizing: border-box;
+    justify-content: center;
 }
-
+.service_card p{
+    flex-wrap: wrap;
+}
 #contact p{
     margin-bottom: 23px;
 }
 
 label{
-display: block;
+    display: block;
 }
 
 input[type=text], input[type=email]{
@@ -336,120 +416,72 @@ input[type=text], input[type=email]{
     width: 550px;
     height: 50px;
     border-radius: 5px;
+    transition: width 1s, height 1s;
  }
- input[type=submit]:hover {  
+ input[type=submit]:hover{  
     cursor: pointer;
- }
+    animation-name: changeColors;
+    animation-duration: 5s;
+    animation-delay: 0.1s;
+    width: 560px;
+    height: 60px;
+}
+
+@keyframes changeColors{
+  from {background-color: #007BFF;}
+  to   {background-color: #FF4500;}
+}
+ 
 
 
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
- @media all and (max-width: 600px) {
- nav ul {
-    width: 100%;
-    margin:0;
-    padding:0;
-    list-style:none;
-    overflow:hidden;
-    text-align:center;
-    max-height: 0;
+ @media all and (min-width: 600px) {
+.navigat ul {
+    overflow:visible;
+    top: 1.5rem;
+    left:.5rem;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+}      
+.navigat li a {
+        display:inline-block;
 }
-nav li a {
+.navigat label span, input[type=checkbox] {
+    display:none;
+}
+.navigat li a {
     display:block;
     font-family:sans-serif;
     font-size:1.5rem;
-    padding:1rem;
+    padding:20px;
     text-transform:uppercase;
     font-weight:bold;
     text-decoration:none;
-    color: white;
+    color: #007BFF;
     transition: background-color .3s ease-in;
   }
-  nav a:hover, nav input:hover {
-      background-color: black;
-  }
-  nav label {
-      cursor: pointer;
-      display: inline-block;
-      padding: 1.5rem;
-      user-select: none;
-  }
-  /* BUILDS THE MIDDLE LILNE OF THE HAMBURGER */
-  label span {
-      background-color: white;
-      display: block;
-      height: .25rem;
-      position: relative;
-      transition: background-color .3s ease-out;
-      width: 2rem;
-  }
-  /* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
-  label span:before, label span:after {
-      background: white;
-      content: '';
-      display: block;
-      height: 100%;
-      position: absolute;
-      transition: all .2s ease-out;
-      width: 100%;
-  }
-  label span:before {
-      top: .75rem;
-  }
-  label span:after {
-      top: -.75rem;
-  }
-  input {
-    display:none;
-  }
-  /* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
-  input:checked ~ ul {
-      max-height: 500px;
-  }
-  /* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
-  input:checked ~ label span {
-      background: transparent;
-  }
-  /* ROTATES THE TOP LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
-  input:checked ~ label span:before {
-      transform: rotate(-45deg);
-  }
-  /* ROTATES THE BOTTOM LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
-  input:checked ~ label span:after {
-      transform: rotate(45deg);
-  }
-  /* LOCATION OF THE HAMBURGER */
-  input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
-      top: 0;
-  }
+  
+
 #services{  
+    background-color: #EAEAEA;
+    color: #000000;
+    padding: 20px;
+    margin-bottom: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     gap: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    background-color: #EAEAEA;
-    color: #000000;
-    padding: 20px 20px;
-    margin-bottom: 0;
-    position: relative;
-}
-.group11, .group22{
-    flex: 1 1 100%;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-    width: 100%;
     box-sizing: border-box;
 }
-.group1, .group2{
-    max-width: 100%;
+.service_card{
+    background-color: #007BFF;
+    color: #EAEAEA;
+    padding: 15px;
+    border-radius: 10px;
     width: 100%;
-    margin: 12px 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 #profgrowth{
     flex-direction: column;
@@ -474,17 +506,14 @@ margin-left: 150px;
 @media all and (min-width: 800px) {
 
 #services {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
 }
-.group11, .group22 {
-    flex: 1 1 calc(50% - 10px);
-    max-width: calc(50% - 10px);
-}
-.group1, .group2 {
-    width: 100%;
+.service_card{
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
 }
 #results {
     grid-template-columns: 1fr 1fr;
@@ -511,20 +540,9 @@ form{
 
 /* MEDIA QUERIES (LARGE) */
 @media all and (min-width: 900px) {
-#services{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-.group11, .group22 {
-    flex: 1 1 calc(50% - 10px);
-    max-width: calc(50% - 10px);
-    display: flex;
-    flex-direction: column;
-}
-.group1, .group2 {
-    width: 100%;
+.service_card{
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
 }
 
 form{
@@ -540,15 +558,6 @@ form{
     gap: 20px;
 }
 
-#group1, #group2{
-    width: 300px;
-
-}
-.group11, .group22{
-    width: 100%;   
-    margin: 0;
-    display: flex
-}  
 ul{
     display: flex;
     top: 0;

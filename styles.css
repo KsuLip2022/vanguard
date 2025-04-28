@@ -91,6 +91,8 @@ header > img{
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
     margin-top: 20px;
+    margin-right: 9px;
+    
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -170,6 +172,7 @@ header{
     margin-bottom: 0;  
     display: flex; 
     z-index: 10;
+    align-items: center;
 }
 
 .divid{   
@@ -180,42 +183,52 @@ header{
     z-index: 1;   
 }
 
-ul a{
-    text-decoration: none;  
-}
-
 .navigat ul {
-    width: 100%;
+    /*width: 100%;
     margin:0;
     padding:0;
     list-style: none;
+    overflow: hidden;*/
+    max-width: 0;
     overflow: hidden;
+    transition: max-height 0.3s easy-out;
+    background-color: #000000;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 nav h2{
+    position: absolute;
     visibility: hidden;
     height:1px;
 }
 
 .navigat li a {
-    display:block;
-    font-family:sans-serif;
-    font-size:1.5rem;
-    padding:1rem;
-    text-transform:uppercase;
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
     font-weight: bold;
     text-decoration: none;
     color: #007BFF;
     transition: background-color .3s ease-in;
+    text-align: center;
 }
 
 .navigat a:hover, nav input:hover {
     background-color: #000000;
 }
 
+.navigat label{
+    display: block;
+    cursor: pointer;
+}
 .navigat label span{
     /*visibility: hidden;*/
-    height:1px;
+    height: 1px;
     background-color: #EAEAEA;
     transition: back;
     display: block;
@@ -223,9 +236,10 @@ nav h2{
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
+    margin-left: 155px;
 }
 .navigat label span:before, .navigat label span:after {
-    background: white;
+    background: #EAEAEA;
     content: '';
     display: block;
     height: 100%;
@@ -459,8 +473,7 @@ address{
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 @media all and (min-width: 400px) {
     nav ul{
-    text-align: right;
-    margin-left: 150px;
+    
     }   
     }
     
@@ -469,31 +482,33 @@ address{
  @media all and (min-width: 600px) {
 
 .navigat ul {
-    overflow:visible;
-    top: 1.5rem;
-    left:.5rem;
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    position: absolute;
+    overflow: visible;
+    display: flex;
+    max-height: none;
+    position: static;
+    width: auto;
+    gap: 20px;
+    background-color: transparent;
 } 
 
 .navigat li a {
-    display:inline-block;
-    text-align: center;
+    display: inline-block;
+    text-align: left;
+    padding: 0 20px;
 }
 
 .navigat label span, input[type=checkbox] {
-    display:none;
+    display: none;
 }
 
 .navigat li a {
-    display:block;
-    font-family:sans-serif;
-    font-size:1.5rem;
-    padding:20px;
-    text-transform:uppercase;
-    font-weight:bold;
-    text-decoration:none;
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
     color: #007BFF;
     transition: background-color .3s ease-in;
 }
@@ -565,7 +580,6 @@ form{
 
 nav ul{
     text-align: right;
-    margin-left: 150px;
 }
 
 #profgrowth{
@@ -620,16 +634,15 @@ ul{
     top: 0;
     left: 0;
     gap: 35px;
-    padding: 20px 40px;
+    padding: 0;
 }
 
 nav{
-    margin-left: auto;
+    margin-left: 255px;
+    width: auto;
 }
 
-nav ul{
-    text-align: right;
-}
+
 }
 
 

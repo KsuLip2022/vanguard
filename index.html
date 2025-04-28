@@ -13,36 +13,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<div class="container">
+
 <body>
+    <div class="container">
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
  
  <header>
     <img src="images/vanguard-logo.svg" alt="Logo">
     <h1>Vanguard</h1>
-
+    <nav>
         <h2>Main Navigation</h2>
 
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle"><span></span></label>
-
+    
         <ul>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#services">SERVICES</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
+    </nav>
+    
 </header>
 
-    <div class="divid"></div>
+    
 
 <main>
-
+    
     <div id="about">
+        <div class="divid"></div>
         <section id="picture">
+            <div class="text-container">
         <h2>Innovation & Investment</h2>
         <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
         <button class="butt">Request a Consultation</button>
+            </div>
         </section>
+    
 
         <section id="expert">
         <h2>Our Expertise. Your Edge.</h2>
@@ -53,45 +60,47 @@
 
     <div id="services">
         <h2>What We Offer</h2>
-        <div class="group11">
-                <section id="group1">
+        <div id="service_block">
+        <div id="group11" class="group11">
+                <section class="group1">
                     <h3>Strategic Growth Consulting</h3>
                     <p>Unlock new revenue streams and optimize market expansion strategies.</p>
                 </section>
-                <section id="group1">
+                <section class="group1">
                     <h3>Investment Solutions</h3>
                     <p>Maximize returns with data-driven portfolio management.</p>
                 </section>
-                <section id="group1">
+                <section class="group1">
                     <h3>Business Acceleration & Mergers</h3>
                     <p>Identify opportunities for rapid growth and high-value acquisitions.</p>
                 </section>
         </div>
         
-        <div class="group22">
-                <section id="group2">
+        <div id="group22" class="group22">
+                <section class="group2">
                     <h3>Digital Transformation</h3>
                     <p>Stay at the forefront of industry advancements with AI, blockchain, and automation.</p>
                 </section>
-                <section id="group2">
+                <section class="group2">
                     <h3>Exclusive Executive Advisory Services</h3>
                     <p>Personalized insights and leadership support for C-suite executives and high-net-worth investors.</p>
                 </section>
-                <section id="group2">
+                <section class="group2">
                     <h3>Corporate Innovation</h3>
                     <p>Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance competitive advantage, and adapt to evolving market demands.</p>
                 </section>
+            </div>
         </div>
     </div>
 
-        <section id="prov">
+    <div id="prov">
             <h2>Proven Results</h2>
-
             <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
+   
 
-        <section id="profgrowth">
+    <div id="profgrowth">
 
-        <div class="block profits">
+        <section class="block profits">
             <h3> Profits </h3>
         
             <table>
@@ -130,10 +139,9 @@
                     </tr>
             </tbody>
             </table>
-        </div>  
+        </section>  
 
-
-        <div class="block growth">
+        <section class="block growth">
             <h3>Growth</h3>
 <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
         
@@ -144,66 +152,69 @@
                         <div class="bar" data-year="2023" style="--height: 85%;"></div>
                         <div class="bar" data-year="2024" style="--height: 100%;"></div>
                     </div>
-        </div>
         </section>
-        </section>            
-    
-            
-    
+    </div>
+    </div>
+                      
     <div id="contact">    
 
             <h2>Contact Us</h2>
         <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
         <form>
-    <div class="form-gr">
-        <p>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="fullname">
-        </p>
-    </div>
-    <div class="form-right">
-        <p>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email">
-        </p>
-    </div>
-    <div class="form-gr">
-        <p>
-            <label for="company">Company Name</label>
-            <input type="text" id="company" name="company">
-        </p>
-    </div>
-    <div class="form-right">  
-        <p>
-            <label for="industry">Industry</label>
-            <input type="text" id="industry" name="industry">
-        </p> 
-    </div>
-    <div class="form-gr">    
-        <p>
-            <label for="message">How can we help you?</label>
-            <input type="text" id="message" name="message">
-        </p>
-    </div>
-    <div class="form-right">
-        <input type="submit" value="Submit"> 
-    </div>
+            <div class="form-gr">
+                <p>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="fullname">
+                </p>
+            </div>
+            <div class="form-right">
+                <p>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+                </p>
+            </div>
+            <div class="form-gr">
+                <p>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </p>
+            </div>
+            <div class="form-right">  
+                <p>
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" name="industry">
+                </p> 
+            </div>
+            <div class="form-gr">    
+                <p>
+                    <label for="message">How can we help you?</label>
+                    <input type="text" id="message" name="message">
+                </p>
+            </div>
+            <div class="form-right">
+                <input type="submit" value="Submit"> 
+            </div>
 
-    </form>
+        </form>
     </div>
 
 </main>  
-</body>
+
 
 
 <footer>
     <address>
-        <p>&#169 2025 Vanguard. All rights reserved.</p>
-        <section id="email">
+        <p>© 2025 Vanguard. All rights reserved.</p>
+        <div class="email">
             <p class="lab">Email:</p> 
             <p class="mail"><a href="mailto:info@vanguard.com"> info@vanguard.com</a></p>  
-        </section>
+        </div>
         <p>Phone: 480.123.4567</p>
     </address>
 </footer> 
-</div>       
+
+
+    </div>  
+
+</body>
+</html>

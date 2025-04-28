@@ -91,7 +91,8 @@ header > img{
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
     margin-top: 20px;
-    margin-right: 9px;
+    margin-right: 12px;
+    margin-left: 9px;
     
 }
 /* THIS ONE IS DONE FOR YOU */

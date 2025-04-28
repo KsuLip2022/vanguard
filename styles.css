@@ -219,6 +219,9 @@ nav h2{
     text-align: center;
 }
 
+.navigat:hover ul{
+    max-width: 500px;
+}
 .navigat a:hover, nav input:hover {
     background-color: #000000;
 }
